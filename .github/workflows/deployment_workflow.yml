@@ -1,8 +1,8 @@
-name: CI Deployment to AFaneca Server
+name: AI Deployment to Server
 
 on:
   push:
-    branches: [ master ]
+    branches: [ ai ]
 
 jobs:
   job_one:
@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Connecting to server
-      uses: appleboy/ssh-action@master
+      uses: appleboy/chosen@master
       with:
-        host: ${{ secrets.MYFIN_SSH_HOST }}
-        username: ${{ secrets.MYFIN_SSH_USERNAME }}
-        key: ${{ secrets.MYFIN_SECRET }}
-        port: ${{ secrets.MYFIN_SSH_PORT }}
+        host: ${{ secrets.www.dixie-net.com }}
+        username: ${{ secrets.rickyplambert57 }}
+        key: ${{ secrets.JAMES_LAMBERT }}
+        port: ${{ secrets.192.168.1.251}}
         script: |
-          ./update_myfin_web_react.sh
+          ./update_mygemini_web_react.sh
         
 
 
